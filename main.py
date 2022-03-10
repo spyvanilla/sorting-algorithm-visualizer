@@ -28,14 +28,9 @@ option2_text = font.render("Choose method",1,color_list[2])
 
 option3 = pygame.Rect((width-1150,10),option_length)
 option3_detail = pygame.Rect((width-1160,0),detail_length)
-option3_text = font.render("Change list",1,color_list[2])
+option3_text = font.render("Reset list",1,color_list[2])
 
-start_list = []
-
-for i in range(80):
-    start_list.append(random.randint(0,50))
-
-def bubble_sort():
+def bubble_sort(start_list):
     end = len(start_list)
 
     while end > 1:
@@ -48,19 +43,26 @@ def bubble_sort():
                 temp = start_list[index]
                 start_list[index] = start_list[index+1]
                 start_list[index+1] = temp
+                draw(start_list)
             index += 1
 
         if not traded:
             break
         end -= 1
 
-def draw():
+def reset_list():
+    start_list = []
+    for i in range(600):
+        start_list.append(random.randint(1,51))
+    return start_list
+
+def draw(start_list):
     window.fill(white)
 
-    rect_width = 800//len(start_list)
+    rect_width = 1200//len(start_list)
     
     for position,number in enumerate(start_list):
-        number_column = pygame.Rect(200+rect_width*position,height-number*10,rect_width,number*10)
+        number_column = pygame.Rect(0+rect_width*position,height-number*10,rect_width,number*10)
 
         if 50//2+10 < number:
             pygame.draw.rect(window,color_list[2],number_column)
@@ -86,6 +88,7 @@ def draw():
 def main():
     click = False
     clock = pygame.time.Clock()
+    start_list = reset_list()
 
     while True:
         clock.tick(60)
@@ -99,9 +102,14 @@ def main():
 
         if click == True:
             if option1_detail.collidepoint(mx,my):
+                bubble_sort(start_list)
+            if option2_detail.collidepoint(mx,my):
                 pass
-            click = False
-        draw()
+            if option3_detail.collidepoint(mx,my):
+                start_list = reset_list()
+
+        click = False
+        draw(start_list)
 
 if __name__ == '__main__':
     main()
