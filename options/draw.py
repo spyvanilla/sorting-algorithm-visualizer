@@ -7,6 +7,7 @@ font = pygame.font.SysFont('Arial',40)
 width,height = 1200,800
 
 white = (255,255,255)
+red = (255,0,0)
 color_list = [(127,127,127),(50,50,50),(0,0,0)]
 
 option_length = (300,100)
@@ -32,7 +33,11 @@ back_option = pygame.Rect((width//2-option_length[0]//2,height-(option_length[1]
 back_detail = pygame.Rect((width//2-detail_length[0]//2,height-detail_length[1]-5),detail_length)
 back_text = font.render("Back",1,color_list[2])
 
+change_len = pygame.Rect((width//2-option_length[0]//2,height//2-option_length[1]//2+100),option_length)
+change_len_detail = pygame.Rect((width//2-detail_length[0]//2,height//2-detail_length[1]//2+100),detail_length)
 change_len_text = font.render("Enter the value of your list:",1,color_list[2])
+
+exceeded_error_message = font.render("The maximum list length in 1200",1,red)
 
 class Draw:
     
@@ -81,10 +86,21 @@ class Draw:
 
         pygame.display.update()
 
-    def change_length(self):
+    def change_length(self,input_values,exceeded_error):
         self.window.fill(white)
 
+        if type(input_values) == list:
+            input_values = font.render("".join(str(value) for value in input_values),1,color_list[2])
+        else:
+            input_values = font.render(str(input_values),1,color_list[2])
+
+        pygame.draw.rect(self.window,color_list[2],change_len_detail)
+        pygame.draw.rect(self.window,white,change_len)
         self.window.blit(change_len_text,(width//2-change_len_text.get_width()//2,height//2-change_len_text.get_height()//2))
+        self.window.blit(input_values,(change_len.x+150-input_values.get_width()//2,change_len.y+50-input_values.get_height()//2))
+
+        if exceeded_error is not None:
+            self.window.blit(exceeded_error_message,(width//2-exceeded_error_message.get_width()//2,height//2-exceeded_error_message.get_height()//2-100))
 
         pygame.draw.rect(self.window,color_list[1],back_detail)
         pygame.draw.rect(self.window,color_list[0],back_option)
