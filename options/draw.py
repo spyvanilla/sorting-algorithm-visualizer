@@ -13,6 +13,7 @@ color_list = [(127,127,127),(50,50,50),(0,0,0)]
 option_length = (300,100)
 detail_length = (320,120)
 
+#Options of the first screen
 option1 = pygame.Rect((width-350,10),option_length)
 option1_detail = pygame.Rect((width-360,0),detail_length)
 option1_text = font.render("Sort",1,color_list[2])
@@ -33,10 +34,23 @@ back_option = pygame.Rect((width//2-option_length[0]//2,height-(option_length[1]
 back_detail = pygame.Rect((width//2-detail_length[0]//2,height-detail_length[1]-5),detail_length)
 back_text = font.render("Back",1,color_list[2])
 
+#Options of the sort method selection screen
+bubble_sort_option = pygame.Rect((width-350,10),option_length)
+bubble_sort_detail = pygame.Rect((width-360,0),detail_length)
+bubble_sort_text = font.render("Bubble sort",1,color_list[2])
+
+insertion_sort_option = pygame.Rect((width-750,10),option_length)
+insertion_sort_detail = pygame.Rect((width-760,0),detail_length)
+insertion_sort_text = font.render("Insertion sort",1,color_list[2])
+
+shell_sort_option = pygame.Rect((width-1150,10),option_length)
+shell_sort_detail = pygame.Rect((width-1160,0),detail_length)
+shell_sort_text = font.render("Shell sort",1,color_list[2])
+
+#Options of the length change screen
 change_len = pygame.Rect((width//2-option_length[0]//2,height//2-option_length[1]//2+100),option_length)
 change_len_detail = pygame.Rect((width//2-detail_length[0]//2,height//2-detail_length[1]//2+100),detail_length)
 change_len_text = font.render("Enter the value of your list:",1,color_list[2])
-
 exceeded_error_message = font.render("The maximum list length in 1200",1,red)
 
 class Draw:
@@ -79,6 +93,18 @@ class Draw:
 
     def change_sort_method(self):
         self.window.fill(white)
+
+        pygame.draw.rect(self.window,color_list[1],bubble_sort_detail)
+        pygame.draw.rect(self.window,color_list[0],bubble_sort_option)
+        self.window.blit(bubble_sort_text,(bubble_sort_option.x+150-bubble_sort_text.get_width()//2,bubble_sort_option.y+50-bubble_sort_text.get_height()//2))
+
+        pygame.draw.rect(self.window,color_list[1],insertion_sort_detail)
+        pygame.draw.rect(self.window,color_list[0],insertion_sort_option)
+        self.window.blit(insertion_sort_text,(insertion_sort_option.x+150-insertion_sort_text.get_width()//2,insertion_sort_option.y+50-insertion_sort_text.get_height()//2))
+
+        pygame.draw.rect(self.window,color_list[1],shell_sort_detail)
+        pygame.draw.rect(self.window,color_list[0],shell_sort_option)
+        self.window.blit(shell_sort_text,(shell_sort_option.x+150-shell_sort_text.get_width()//2,shell_sort_option.y+50-shell_sort_text.get_height()//2))
 
         pygame.draw.rect(self.window,color_list[1],back_detail)
         pygame.draw.rect(self.window,color_list[0],back_option)

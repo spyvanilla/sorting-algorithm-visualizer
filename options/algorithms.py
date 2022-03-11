@@ -39,3 +39,22 @@ class Algorithms:
 
             self.start_list[j+1] = nxt_element
         self.draw.draw(self.start_list)
+
+    def shell_sort(self):
+        n = len(self.start_list)
+        gap = n//2
+
+        while gap > 0:
+    
+            for i in range(gap,n):
+                temp = self.start_list[i]
+                j = i
+
+                while  j >= gap and self.start_list[j-gap] >temp:
+                    self.start_list[j] = self.start_list[j-gap]
+                    self.draw.draw(self.start_list)
+                    j -= gap
+
+                self.start_list[j] = temp
+                self.draw.draw(self.start_list)
+            gap //= 2
