@@ -25,7 +25,7 @@ python main.py
 
 # Sorting algorithms
 
-There are currently 3 sorting algorithms being rendered in the application, they are:
+There are currently 3 sorting algorithms being rendered in the application:
 
 - Bubble sort
 - Insertion sort
