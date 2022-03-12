@@ -12,18 +12,17 @@ window = pygame.display.set_mode((width,height))
 pygame.display.set_caption('Sorting Algorithm Visualizer')
 
 white = (255,255,255)
-color_list = [(127,127,127),(50,50,50),(0,0,0)]
+color_list = [(127,127,127),(50,50,50),(0,0,0)] #gray,dark gray, black
 
+#Buttons that generate events when you click on them
 detail_length = (320,120)
 option1_detail = pygame.Rect((width-360,0),detail_length)
 option2_detail = pygame.Rect((width-760,0),detail_length)
 option3_detail = pygame.Rect((width-1160,0),detail_length)
 option4_detail = pygame.Rect((width-760,0+detail_length[1]+40),detail_length)
-
 bubble_sort_detail = pygame.Rect((width-360,0),detail_length)
 insertion_sort_detail = pygame.Rect((width-760,0),detail_length)
 shell_sort_detail = pygame.Rect((width-1160,0),detail_length)
-
 back_detail = pygame.Rect((width//2-detail_length[0]//2,height-detail_length[1]-5),detail_length)
 
 number_keys = {
@@ -80,8 +79,8 @@ def main():
     click = False
 
     clock = pygame.time.Clock()
+    
     start_list,algorithms = reset_list(list_len)
-
     draw = options.Draw(window)
 
     while True:
