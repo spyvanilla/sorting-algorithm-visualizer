@@ -2,7 +2,7 @@
 
 It serves as a way to analyse some sorting algorithms using graphics rendered in pygame
 
-# How to install?
+# How to install
 
 Open your terminal
 
