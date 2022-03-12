@@ -1,7 +1,6 @@
 import sys
 import random
 import time
-from xmlrpc.server import list_public_methods
 
 import pygame
 
