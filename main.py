@@ -84,7 +84,7 @@ def change_length(keys_pressed,list_len,change_len,exceeded_error):
     return list_len,change_len,exceeded_error
 
 def main():
-    sort_method = 6
+    sort_method = 1
     exceeded_error = None
     change_len = []
     list_len = 200
