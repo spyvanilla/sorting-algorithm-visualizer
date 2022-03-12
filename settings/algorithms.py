@@ -1,4 +1,4 @@
-from options.draw import Draw
+from settings.draw import Draw
 
 class Algorithms:
 

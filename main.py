@@ -4,7 +4,7 @@ import time
 
 import pygame
 
-import options
+import settings
 
 width,height = 1200,800
 
@@ -56,7 +56,7 @@ def reset_list(list_len):
 
     for _ in range(list_len):
         start_list.append(random.randint(1,51))
-        algorithms = options.Algorithms(window,start_list)
+        algorithms = settings.Algorithms(window,start_list)
     return start_list,algorithms
 
 def change_length(keys_pressed,list_len,change_len,exceeded_error):
@@ -94,7 +94,7 @@ def main():
     clock = pygame.time.Clock()
     
     start_list,algorithms = reset_list(list_len)
-    draw = options.Draw(window)
+    draw = settings.Draw(window)
 
     while True:
         clock.tick(60)
