@@ -1,4 +1,4 @@
-# sorting algorithm visualizer using pygame
+# Sorting algorithm visualizer using pygame
 
 It serves as a way to analyse some sorting algorithms using graphics rendered in pygame
 
