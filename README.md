@@ -4,7 +4,11 @@ It serves as a way to analyse some sorting algorithms using graphics rendered in
 
 # How to install?
 
-Clone the repository using the following command in your terminal:
+If you don't have pygame installed in your computer, use:
+```
+pip install pygame
+```
+Then clone the repository using the following command in your terminal:
 ```
 git clone https://github.com/spyvanilla/sorting-algorithm-visualizer.git
 ```
