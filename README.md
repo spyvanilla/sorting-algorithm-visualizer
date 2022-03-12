@@ -25,8 +25,11 @@ python main.py
 
 # Sorting algorithms
 
-There are currently 3 sorting algorithms being rendered in the application:
+There are currently 6 sorting algorithms being rendered in the application:
 
 - Bubble sort
 - Insertion sort
 - Shell sort
+- Quick sort
+- Pigeonhole sort
+- Cycle sort

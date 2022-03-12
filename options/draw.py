@@ -47,6 +47,18 @@ shell_sort_option = pygame.Rect((width-1150,10),option_length)
 shell_sort_detail = pygame.Rect((width-1160,0),detail_length)
 shell_sort_text = font.render("Shell sort",1,color_list[2])
 
+quick_sort_option = pygame.Rect((width-350,210),option_length)
+quick_sort_detail = pygame.Rect((width-360,200),detail_length)
+quick_sort_text = font.render("Quick sort",1,color_list[2])
+
+pigeonhole_sort_option = pygame.Rect((width-750,210),option_length)
+pigeonhole_sort_detail = pygame.Rect((width-760,200),detail_length)
+pigeonhole_sort_text = font.render("Pigeohole sort",1,color_list[2])
+
+cycle_sort_option = pygame.Rect((width-1150,210),option_length)
+cycle_sort_detail = pygame.Rect((width-1160,200),detail_length)
+cycle_sort_text = font.render("Cycle sort",1,color_list[2])
+
 #Options of the length change screen
 change_len = pygame.Rect((width//2-option_length[0]//2,height//2-option_length[1]//2+100),option_length)
 change_len_detail = pygame.Rect((width//2-detail_length[0]//2,height//2-detail_length[1]//2+100),detail_length)
@@ -105,6 +117,18 @@ class Draw:
         pygame.draw.rect(self.window,color_list[1],shell_sort_detail)
         pygame.draw.rect(self.window,color_list[0],shell_sort_option)
         self.window.blit(shell_sort_text,(shell_sort_option.x+150-shell_sort_text.get_width()//2,shell_sort_option.y+50-shell_sort_text.get_height()//2))
+
+        pygame.draw.rect(self.window,color_list[1],quick_sort_detail)
+        pygame.draw.rect(self.window,color_list[0],quick_sort_option)
+        self.window.blit(quick_sort_text,(quick_sort_option.x+150-quick_sort_text.get_width()//2,quick_sort_option.y+50-quick_sort_text.get_height()//2))
+
+        pygame.draw.rect(self.window,color_list[1],pigeonhole_sort_detail)
+        pygame.draw.rect(self.window,color_list[0],pigeonhole_sort_option)
+        self.window.blit(pigeonhole_sort_text,(pigeonhole_sort_option.x+150-pigeonhole_sort_text.get_width()//2,pigeonhole_sort_option.y+50-pigeonhole_sort_text.get_height()//2))
+
+        pygame.draw.rect(self.window,color_list[1],cycle_sort_detail)
+        pygame.draw.rect(self.window,color_list[0],cycle_sort_option)
+        self.window.blit(cycle_sort_text,(cycle_sort_option.x+150-cycle_sort_text.get_width()//2,cycle_sort_option.y+50-cycle_sort_text.get_height()//2))
 
         pygame.draw.rect(self.window,color_list[1],back_detail)
         pygame.draw.rect(self.window,color_list[0],back_option)
