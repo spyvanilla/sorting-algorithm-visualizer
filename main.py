@@ -12,7 +12,7 @@ window = pygame.display.set_mode((width,height))
 pygame.display.set_caption('Sorting Algorithm Visualizer')
 
 white = (255,255,255)
-color_list = [(127,127,127),(50,50,50),(0,0,0)] #gray,dark gray, black
+color_list = [(127,127,127),(50,50,50),(0,0,0)] #gray, dark gray, black
 
 #Buttons that generate events when you click on them
 detail_length = (320,120)
